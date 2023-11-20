@@ -26,9 +26,8 @@ export const cartSlice = createSlice({
       state.cart = state.cart.map((item) => {
         if (item.id === action.payload.id) {
           item.count++;
-        } else {
-          return item;
         }
+        return item;
       });
     },
 
@@ -36,9 +35,8 @@ export const cartSlice = createSlice({
       state.cart = state.cart.map((item) => {
         if (item.id === action.payload.id && item.count > 1) {
           item.count--;
-        } else {
-          return item;
         }
+        return item;
       });
     },
 
